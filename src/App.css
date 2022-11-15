@@ -52,6 +52,8 @@ Grids
     /* ". email-form email-form email-form ." */
     ". . berry . ."
     ". email-form email-form email-form ."
+    ". . message-list . ."
+
 
     ". . message . .";
   }
@@ -72,6 +74,14 @@ Grids
 
   .email {
     grid-area: email-form;
+    height: 20vh;
+    margin: auto;
+    align-items:center;
+    justify-content:center;
+  }
+
+  .message-list {
+    grid-area: message-list;
     height: 20vh;
     margin: auto;
     align-items:center;

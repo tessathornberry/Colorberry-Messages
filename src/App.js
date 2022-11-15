@@ -39,11 +39,12 @@ const App = () => {
     setCurrentMessage(messageInput);
   }
   const MessageListRender = () => {
-    if (messagesVisible) {
-      return (
+    if (messagesVisible && messages.length > 0) {
+      return ( <div className="message-list"><h3>Your Colorberry Messages</h3>
       <ul>{messages.map((singleMessage) => (
         <MessageList message={singleMessage} key={singleMessage._id} selectMessage={selectMessage} />
       ))}</ul>
+      </div>
       )
     } else {
       return null;
