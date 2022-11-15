@@ -36,3 +36,33 @@
     transform: rotate(360deg);
   }
 }
+
+/* /*
+Grids
+========================================
+*/
+
+.App {
+  top-padding: 10vh;
+  /* grid-gap: 5px; */
+  display: grid;
+  grid-template-columns: auto 20% 400px 20% auto;
+  grid-template-rows: 20vh auto;
+  grid-template-areas:
+    ". . berry . ."
+    ". . message . .";
+  }
+
+  .message-block {
+  grid-area: message;
+  /* margin-top: 100px; */
+  justify-content:space-around;
+  }
+
+  .berry {
+    grid-area: berry;
+    height: 20vh;
+    margin: auto;
+    align-items:center;
+    justify-content:center;
+  }

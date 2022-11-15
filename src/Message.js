@@ -2,15 +2,11 @@ import React from 'react';
 import styled from 'styled-components';
 
 const Message = ({message}) => {
-  console.log(message.fontColor);
+  // console.log(message.fontColor);
   return (
-    <div>
       <TextBlock className="message message-block" style={{backgroundColor: `${message.color}`}} >
-        <Text style={{color: `${message.fontColor}`}}>{message.message}</Text>
+        <Text className="message message-text" style={{color: `${message.fontColor}`}}>{message.message}</Text>
       </TextBlock>
-
-
-    </div>
   )
 }
 
@@ -18,13 +14,18 @@ export default Message;
 
 const TextBlock = styled.div`
   width: 50vw;
+  max-width: 400px;
+  min-width: 400px;
+
   height: 25vh;
   border: 2px solid black;
   border-radius: 10px;
   display: flex;
+  justify-content: space-around;
 `;
 
 const Text = styled.div`
+  font-size: 5vh;
   line-height:
   display: flex;
   width: 50%;
