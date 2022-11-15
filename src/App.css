@@ -53,8 +53,7 @@ Grids
     ". . berry . ."
     ". email-form email-form email-form ."
     ". . message-list . ."
-
-
+    ". . new-message . ."
     ". . message . .";
   }
 
@@ -74,16 +73,39 @@ Grids
 
   .email {
     grid-area: email-form;
-    height: 20vh;
+    /* height: 20vh; */
+    border: 2px solid pink;
+    border-radius: 20px;
     margin: auto;
+    padding: 10px;
     align-items:center;
     justify-content:center;
   }
 
   .message-list {
     grid-area: message-list;
-    height: 20vh;
+    /* height: 20vh; */
+    margin: auto;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .new-message {
+    grid-area: new-message;
+    /* height: 20vh; */
     margin: auto;
     align-items:center;
     justify-content:center;
+  }
+
+  .list {
+    /* margin: auto; */
+    align-items: left;
+    justify-content: left;
+  }
+
+  ul {
+    color: red;
+    vertical-align: middle;
+    padding-inline-start: 0;
   }

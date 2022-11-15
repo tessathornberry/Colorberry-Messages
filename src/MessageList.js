@@ -20,6 +20,7 @@ const ListItem = styled.li`
   display: flex;
   width: 50%;
   margin: auto;
-  // align-items: center;
-  // justify-content:center;
+  align-items: center;
+  justify-content:center;
+  padding-bottom: 10px;
 `
