@@ -47,9 +47,12 @@ Grids
   /* grid-gap: 5px; */
   display: grid;
   grid-template-columns: auto 20% 400px 20% auto;
-  grid-template-rows: 20vh auto;
+  grid-template-rows: 20vh auto auto;
   grid-template-areas:
+    /* ". email-form email-form email-form ." */
     ". . berry . ."
+    ". email-form email-form email-form ."
+
     ". . message . .";
   }
 
@@ -61,6 +64,14 @@ Grids
 
   .berry {
     grid-area: berry;
+    height: 20vh;
+    margin: auto;
+    align-items:center;
+    justify-content:center;
+  }
+
+  .email {
+    grid-area: email-form;
     height: 20vh;
     margin: auto;
     align-items:center;

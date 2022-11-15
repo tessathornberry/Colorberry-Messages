@@ -6,40 +6,43 @@ import Message from './Message.js';
 import berry from './assets/berry.png';
 
 const App = () => {
-  const [message, setMessage] = useState({});
+  const [messages, setMessages] = useState({});
+  const [currentMessage, setCurrentMessage] = useState({});
   const [email, setEmail] = useState('');
+  const [messageSelected, setMessageSelected] = useState(false);
 
   useEffect(() => {
     axios.get("http://localhost:3000/messages")
       .then(response => {
         console.log('response', response);
-        setMessage(response.data[0]); //change this for messages once there are more
+        setMessages(response.data); //change this for messages once there are more
         console.log(response.data);
       })
       .catch(err => console.log('error with get', err));
   }, [])
 
+  const handleMessageClick = (messages) => {
+    if (Object.keys(messages).length > 0) {
+
+    }
+  }
+
   return (
 
     <div className="App">
-      <img className="berry" src={berry} />
-      {/* <header className="App-header"> */}
-        {/* <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and SAVE BIG to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a> */}
-      {/* </header> */}
-      < Message message={message} />
+
+      <img className="berry" src={berry} alt="a berry"/>
+      <div className="email"><h1>Put in your e-mail address to get started</h1>
+      <form >
+
+      </form>
+      </div>
+      { messageSelected ? < Message message={currentMessage} /> : null }
+
     </div>
   );
 }
 
 export default App;
+
+
