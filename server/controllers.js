@@ -2,7 +2,8 @@ const models = require('./models.js');
 
 module.exports = {
   getMessages: (req, res) => {
-    var params = req.params || {};
+    // console.log('req', req);
+    var params = req.query || {};
     models.getUserMessages(params)
       .then(results => {
         res.setHeader("Access-Control-Allow-Origin", "http://localhost:2999");
@@ -11,7 +12,7 @@ module.exports = {
   },
 
   postMessage: (req, res) => {
-    // console.log('req body', req.body);
+    // console.log('req body', req);
     var params = req.body || {};
     models.postUserMessage(params)
       .then(results => res.send(results).end())

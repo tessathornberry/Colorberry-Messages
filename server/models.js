@@ -6,6 +6,7 @@ const db = require('./database/db.js');
 
 module.exports = {
   getUserMessages: (params) => {
+    console.log('params', params);
     var results = db.BasicMessage.find(params);
     // console.log(results);
     return results;
