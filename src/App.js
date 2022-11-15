@@ -2,13 +2,19 @@ import logo from './logo.svg';
 import './App.css';
 import React, {useState, useEffect, useRef} from 'react';
 import axios from 'axios';
+import Message from './Message.js';
 
-function App() {
-  console.log('checking updates');
+const App = () => {
+  // console.log('checking updates');
+  const [message, setMessage] = useState({});
 
   useEffect(() => {
     axios.get("http://localhost:3000/messages")
-      .then(response => console.log(response.data))
+      .then(response => {
+        console.log('response', response);
+        setMessage(response.data[1]); //change this for messages once there are more
+        console.log(response.data);
+      })
       .catch(err => console.log('error with get', err));
   }, [])
   return (
@@ -16,8 +22,8 @@ function App() {
 
 //   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+      {/* <header className="App-header"> */}
+        {/* <img src={logo} className="App-logo" alt="logo" />
         <p>
           Edit <code>src/App.js</code> and SAVE BIG to reload.
         </p>
@@ -28,8 +34,9 @@ function App() {
           rel="noopener noreferrer"
         >
           Learn React
-        </a>
-      </header>
+        </a> */}
+      {/* </header> */}
+      < Message message={message} />
     </div>
   );
 }

@@ -1,9 +1,8 @@
-const express  = require('express');
 const models = require('./models.js');
 
 module.exports = {
   getMessages: (req, res) => {
-    console.log('req body', req);
+    // console.log('req body', req);
     var params = req.params || {};
     models.getUserMessages(params)
       .then(results => {
@@ -13,7 +12,7 @@ module.exports = {
   },
 
   postMessage: (req, res) => {
-    console.log('req body', req.body);
+    // console.log('req body', req.body);
     var params = req.body || {};
     models.postUserMessage(params)
       .then(results => res.send(results).end())
