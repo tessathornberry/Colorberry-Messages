@@ -17,9 +17,20 @@ const App = () => {
 
 
   // useEffect(() => {
-  //   setMakeNew(false);
+
 
   // }, [messages])
+
+  const handleFormSubmit = (newMessageObject) => {
+    console.log('newMessageObject', newMessageObject);
+    axios.post("http://localhost:3000/messages", newMessageObject, {headers: {"Access-Control-Allow-Origin": "http://localhost:2999"}})
+    .then(results => {
+      console.log('results', results);
+      fetchMessages(newMessageObject.email);
+      setMakeNew(false);
+    })
+    .catch(err => console.log('could not post'));
+  }
 
   const fetchMessages = (email) => {
     axios.get("http://localhost:3000/messages", {params: {email: email}})
@@ -83,7 +94,7 @@ const App = () => {
       </div>
 
       <MessageListRender />
-      { makeNew ? < MakeNewMessage email={emailRef} /> : null }
+      { makeNew ? < MakeNewMessage email={emailRef} handleFormSubmit={handleFormSubmit}/> : null }
       { messageSelected ? < Message message={currentMessage} /> : null }
 
     </div>

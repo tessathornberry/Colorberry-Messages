@@ -12,6 +12,7 @@ app.use(express.static(path.join(__dirname, 'build')));
 
 app.use(express.json());
 app.use(morgan('dev'));
+app.use(cors());
 app.use('/', router);
 
 app.listen(port, console.log(`Listening on port ${port}`));

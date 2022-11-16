@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 
 const MessageList = ({message, selectMessage}) => {
-  console.log('message in messagelist', message);
+  // console.log('message in messagelist', message);
 
   return (
     <ListItem>

@@ -43,13 +43,12 @@ Grids
 */
 
 .App {
-  top-padding: 10vh;
+  padding-top: 5vh;
   /* grid-gap: 5px; */
   display: grid;
   grid-template-columns: auto 20% 400px 20% auto;
   grid-template-rows: 20vh auto auto;
   grid-template-areas:
-    /* ". email-form email-form email-form ." */
     ". . berry . ."
     ". email-form email-form email-form ."
     ". . message-list . ."
@@ -92,10 +91,16 @@ Grids
 
   .new-message {
     grid-area: new-message;
+    width: 100%;
+    display: inline-block;
     /* height: 20vh; */
-    margin: auto;
-    align-items:center;
-    justify-content:center;
+    /* margin: auto; */
+    align-items: stretch;
+  }
+  label {
+    display: inline-block;
+    width: 100%;
+
   }
 
   .list {
