@@ -3,12 +3,10 @@ import styled from 'styled-components';
 
 
 const Colorbox = ({color, selectColor}) => {
-  // console.log(colorRef);
   return (
     <Box value={color} style={{backgroundColor:`${color}`}} onClick={(event) => {
       event.preventDefault();
       selectColor(color);
-    // console.log('colorRef', color);
     }} />
   )
 }
