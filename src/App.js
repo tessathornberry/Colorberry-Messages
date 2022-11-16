@@ -4,17 +4,18 @@ import axios from 'axios';
 import Message from './Message.js';
 import MessageList from './MessageList.js';
 import MakeNewMessage from './MakeNewMessage.js';
-import berry from './assets/berry.png';
+import berry from './assets/strawberrydown.png';
 import styled from 'styled-components';
 
 const App = () => {
   const [messages, setMessages] = useState([]);
   const [currentMessage, setCurrentMessage] = useState({});
-  const [messageSelected, setMessageSelected] = useState(false);
   const emailRef = useRef('');
+  const [messageSelected, setMessageSelected] = useState(false);
   const [messagesVisible, setMessagesVisible] = useState(false);
   const [makeNew, setMakeNew] = useState(false);
   const [makeNewButton, setMakeNewButton] = useState(false);
+  const [emailFormVisible, setEmailFormVisible] = useState(true);
 
 
 
@@ -31,6 +32,7 @@ const App = () => {
       // console.log('results', results);
       fetchMessages(newMessageObject.email);
       setMakeNew(false);
+      setEmailFormVisible(false);
     })
     .catch(err => console.log('could not post'));
   }
@@ -44,10 +46,7 @@ const App = () => {
         setMessages(response.data);
       } else {
         // setMakeNew(true);
-        // setMakeNewButton(true);
         setMessagesVisible(false);
-        setMessageSelected(false);
-
       }
       setMakeNewButton(true);
       // console.log(response.data);
@@ -59,7 +58,18 @@ const App = () => {
     event.preventDefault();
     var emailEntered = emailRef.current.value;
     fetchMessages(emailEntered);
+    setEmailFormVisible(false);
+    setMessageSelected(false);
+    setMakeNew(false);
   }
+
+  const handleGoBack = () => {
+    setEmailFormVisible(true);
+    setMakeNew(false);
+    setMessageSelected(false);
+    setMessagesVisible(false);
+    setMakeNewButton(false);
+    }
 
   const selectMessage = (messageInput) => {
     setMakeNewButton(true);
@@ -87,21 +97,28 @@ const App = () => {
  //the actual app
   return (
     <div className="App">
-      <img className="berry" src={berry} alt="a berry"/>
-      <div className="email"><h1>Put in your e-mail address to get started</h1>
+      <div className="berry-header"><h1 className="header1">Color</h1><img className="berry" src={berry} alt="a berry"/><h1 className="header2">Berry</h1></div>
+
+      {emailFormVisible ? <div className="email"><h1>Put in your e-mail address to get started</h1>
       <form onSubmit={handleEmailSubmit}>
-        <label>
+        <div><label>
         <input type="email" ref={emailRef}  placeholder="Your e-mail address ..." required/>
-      </label>
+      </label></div>
       <button className="e-mail-button" type="submit">Submit</button>
       </form>
-      </div>
+      </div> :
+      <div className="email"><h1>Click button to start over</h1>
+      <button onClick={handleGoBack}>Start Over</button>
+      </div>}
       <div className="color-berry">
       <MessageListRender />
       {makeNewButton ? <button className="new-button" onClick={() => {
         setMakeNew(true);
         setMessageSelected(false);
         setMakeNewButton(false);
+        setMessagesVisible(false);
+        emailFormVisible(false);
+
       }}>Make a new Colorberry</button> : null }
       { makeNew ? < MakeNewMessage email={emailRef} handleFormSubmit={handleFormSubmit}/> : null }
       { messageSelected ? < Message message={currentMessage} /> : null }

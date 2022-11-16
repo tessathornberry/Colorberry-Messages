@@ -36,16 +36,17 @@ const MakeNewMessage = ({email, handleFormSubmit}) => {
         event.preventDefault();
         assembleMessage()}}>
 
-      <label>Font Color
-        <input type="text" ref={fontRef}  placeholder="font color..." required/>
-      </label><br></br>
-      <label>Message
-        <input type="text" ref={messageRef}  placeholder="your message..." required/>
-      </label><br></br>
-      <label>Message Name
-        <input type="text" ref={nameRef}  placeholder="Name your message..." required/>
-      </label><br></br>
-      <GridBox style={{backgroundColor:`${currentColor}`}} onClick={(event) => {
+      <div className="messageLabel" ><label>Message:</label>
+        <input className="message-label-input" type="text" ref={messageRef}  placeholder="your message..." required/>
+        </div>
+        <br></br>
+        <div className="messageLabel" >
+      <label>Message Name: </label>
+        <input className="message-label-input" type="text" ref={nameRef}  placeholder="Name your message..." required/>
+        </div>
+      <br></br>
+
+      <GridBox className="newbox" style={{backgroundColor:`${currentColor}`}} onClick={(event) => {
         event.preventDefault();
         setCurrentColor(selectedColor);
 
@@ -62,8 +63,24 @@ const MakeNewMessage = ({email, handleFormSubmit}) => {
 export default MakeNewMessage;
 
 const GridBox = styled.div`
-  width: 25vh;
+  margin-top: 20px;
+  width: 100%;
   height: 20vh;
   border: 2px solid black;
   border-radius: 10px;
+  cursor: pointer; //may need to oomph this
+  width: 50vw;
+  max-width: 400px;
+  min-width: 400px;
+  height: 25vh;
+  border: 2px solid black;
+  border-radius: 10px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-around;
+  -webkit-justify-content: space-around;
+  -ms-flex-pack: space-around;
+  justify-content: space-around;
 `;

@@ -14,10 +14,12 @@ const Colorbox = ({color, selectColor}) => {
 export default Colorbox;
 
 var Box = styled.li`
+border-radius: 10px;
 cursor: pointer;
 display: inline-block;
 width: 5vw;
 height:5vh;
 border: 2px solid black;
 // background-color: blue;
+margin-left: .5vw;
 `

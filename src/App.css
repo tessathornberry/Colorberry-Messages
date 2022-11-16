@@ -2,10 +2,6 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
@@ -37,7 +33,7 @@
   }
 }
 
-/* /*
+/*
 Grids
 ========================================
 */
@@ -47,92 +43,71 @@ Grids
   /* grid-gap: 5px; */
   display: grid;
   grid-template-columns: auto 20% 400px 20% auto;
-  grid-template-rows: 20vh auto auto auto auto;
+  grid-template-rows: 25vh auto auto;
   grid-template-areas:
-    ". . berry . ."
+    ". berry-header berry-header berry-header ."
     ". email-form email-form email-form ."
-
-    ". color-berry color-berry color-berry ."
+    "color-berry color-berry color-berry color-berry color-berry"
   }
 
-  .color-berry {
-    display: inline-flex;
-    display: grid;
-
-    grid-template-columns:25% 50% 25%;
-    grid-template-rows: auto auto auto auto;
-    grid-template-areas:
-    "message-list new-button new-message"
-    "message-list . new-message"
-      ". message .";
-  }
-
-  .message-block {
-  grid-area: message;
-  /* margin-top: 100px; */
-  margin: auto;
-  width: 100%;
-  justify-content:space-around;
-  }
-
-  .berry {
-    grid-area: berry;
-    height: 20vh;
-    margin: auto;
-    align-items:center;
-    justify-content:center;
+  .berry-header {
+    grid-area: berry-header;
   }
 
   .email {
     grid-area: email-form;
-    /* height: 20vh; */
-    border: 2px solid pink;
-    border-radius: 20px;
-    margin: auto;
-    padding: 10px;
-    align-items:center;
-    justify-content:center;
+  }
+
+  .color-berry {
+    grid-area: color-berry;
+  }
+
+  .color-berry {
+    display: grid;
+    grid-template-columns:25% 50% 25%;
+    grid-template-rows: auto auto auto;
+    grid-template-areas:
+    "sidebar new-button end"
+    "sidebar message end"
+    "sidebar message end";
   }
 
   .message-list {
-    grid-area: message-list;
-    /* height: 20vh; */
-    display: inline-block;
-    margin: auto;
-    width: 100%;
-    align-items: normal;
-    justify-content: left;
+    grid-area: sidebar;
+    border: 2px solid pink;
+    align-items:flex-start;
+  }
+
+  .message-block {
+  grid-area: message;
   }
 
   .new-message {
-    grid-area: new-message;
-    width: 100%;
-    display: inline-block;
-    height: auto;
-    margin: auto;
-    align-items: stretch;
+    grid-area: message;
   }
 
-  label {
-    display: inline-block;
-    width: 100%;
-
+  .newbox {
+    grid-area: message;
+    box-shadow: 10px 5px 5px rgb(160, 160, 160);
+    margin: auto;
+    padding: 20px;
+    /* border: 2px solid blue; */
+    justify-content: center;
   }
 
   .list {
     margin: auto;
-    /* align-items: center;
-    justify-content: center; */
   }
 
   ul {
-    /* grid-area: */
     color: red;
     vertical-align: middle;
     padding-inline-start: 0;
   }
+
   .new-button {
     grid-area: new-button;
+    height: auto;
     width: auto;
     vertical-align: middle;
     margin: auto;
@@ -145,14 +120,148 @@ Grids
     font-weight: 700;
   }
 
-  .e-mail-button {
-    margin: 10px;
+  .palette {
+    background-color:#d5d5d5;
+    padding: .5vh 0 1vh 0;
+    box-shadow: 10px 5px 5px rgb(160, 160, 160);
   }
 
-  .color-berry {
-    border: 2px solid pink;
-    border-radius: 10px;
-    grid-area: color-berry;
-    width: 100%;
-    /* display: inline-block; */
+  /*
+Header
+========================================
+*/
+
+  .berry-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
+
+  .header1 {
+    font-size: 12vh;
+    padding-right: 2vh;
+    font-family: cursive, Verdana, Geneva, Tahoma, sans-serif;
+  }
+
+  .header2 {
+    font-size: 12vh;
+    font-family: cursive, Verdana, Geneva, Tahoma, sans-serif;
+  }
+
+  .berry {
+    height: 20vh;
+    align-items:center;
+  }
+
+  /*
+E-mail box
+========================================
+*/
+
+.email {
+  border: 2px solid pink;
+  border-radius: 20px;
+  margin: auto;
+  padding: 10px;
+  align-items:center;
+  justify-content:center;
+}
+
+/* .e-mail-button { */
+
+button {
+  height: 5vh;
+  width: 10vh;
+  margin: 10px;
+  font-size: 200;
+  background-color: #b2ffb2;
+  border-radius: 5px;
+  height: auto;
+  width: auto;
+  vertical-align: middle;
+  margin: auto;
+  padding: 10px;
+  align-items:center;
+  justify-content:center;
+  margin-top: 20px;
+  font-size: 25px;
+  border-radius: 10px;
+  font-weight: 700;
+  box-shadow: 10px 5px 5px #206d24;
+  cursor: pointer;
+  box-shadow: inset 1px 2px 1px 1px #206d24, 10px 5px 5px #206d24;
+}
+
+button:hover {background-color: #41f44a}
+
+button:active {
+  color: white;
+  background-color: #3b6b3e;
+  transform: translateY(4px);
+}
+
+  /*
+E-mail box
+========================================
+*/
+
+.color-berry {
+  /* border: 2px solid pink; */
+  border-radius: 10px;
+  width: 100%;
+  margin-bottom: 10vh;
+  padding-bottom: 5vh;
+}
+
+.message-list {
+  overflow: auto;
+  cursor: pointer;
+  position: relative;
+  top: 0;
+}
+
+.message-block {
+  margin: auto;
+  width: 100%;
+  justify-content: space-around;
+}
+
+.messageLabel {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  text-align: left;
+
+}
+
+label {
+  width: 60%;
+  font-size: 3vh;
+}
+
+.message-label-input {
+  width: 100%;
+  border-radius: 5px;
+  height: 4vh;
+  font-size: 3vh;
+}
+
+input {
+  border-radius: 5px;
+  height: 4vh;
+  font-size: 3vh;
+}
+
+.new-message {
+  width: 100%;
+  /* display: inline-flex; */
+  height: auto;
+  margin: auto;
+  align-items: center;
+  justify-content: center;
+}
+
+form {
+  align-items: center;
+  justify-content: center;
+}

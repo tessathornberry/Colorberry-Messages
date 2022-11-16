@@ -11,11 +11,16 @@ const Palette = ({colorRef, selectColor}) => {
   }
 
   return (
-    <div className="palette">
+    <PaletteBox className="palette">
       <ul className="palette-1">{mappedPalette(firstColors)}</ul>
       <ul className="palette-2">{mappedPalette(secondColors)}</ul>
-    </div>
+    </PaletteBox>
   )
 }
 
 export default Palette;
+
+const PaletteBox = styled.div`
+border-radius: 10px;
+margin: 20px;;
+`;
