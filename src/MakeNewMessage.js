@@ -13,7 +13,7 @@ const MakeNewMessage = ({email, handleFormSubmit}) => {
     messageObject.fontColor = fontRef.current.value;
     messageObject.message = messageRef.current.value;
     messageObject.messagename = nameRef.current.value;
-    console.log('messageObject', messageObject);
+    // console.log('messageObject', messageObject);
 
     handleFormSubmit(messageObject);
   }

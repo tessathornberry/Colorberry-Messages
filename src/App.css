@@ -47,12 +47,12 @@ Grids
   /* grid-gap: 5px; */
   display: grid;
   grid-template-columns: auto 20% 400px 20% auto;
-  grid-template-rows: 20vh auto auto;
+  grid-template-rows: 20vh auto auto auto auto;
   grid-template-areas:
     ". . berry . ."
     ". email-form email-form email-form ."
-    ". . message-list . ."
-    ". . new-message . ."
+    ". . new-button . ."
+    ". message-list . new-message ."
     ". . message . .";
   }
 
@@ -113,4 +113,17 @@ Grids
     color: red;
     vertical-align: middle;
     padding-inline-start: 0;
+  }
+  .new-button {
+    grid-area: new-button;
+    width: 20vh;
+    vertical-align: middle;
+    margin: auto;
+    padding: 10px;
+    align-items:center;
+    justify-content:center;
+    margin-top: 20px;
+    font-size: 30px;
+    border-radius: 10px;
+    font-weight: 700;
   }

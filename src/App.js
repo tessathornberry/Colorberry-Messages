@@ -22,10 +22,10 @@ const App = () => {
   // }, [messages])
 
   const handleFormSubmit = (newMessageObject) => {
-    console.log('newMessageObject', newMessageObject);
+    // console.log('newMessageObject', newMessageObject);
     axios.post("http://localhost:3000/messages", newMessageObject, {headers: {"Access-Control-Allow-Origin": "http://localhost:2999"}})
     .then(results => {
-      console.log('results', results);
+      // console.log('results', results);
       fetchMessages(newMessageObject.email);
       setMakeNew(false);
     })
@@ -45,7 +45,7 @@ const App = () => {
         setMessageSelected(false);
 
       }
-      console.log(response.data);
+      // console.log(response.data);
     })
     .catch(err => console.log('error with get', err));
   }
@@ -68,10 +68,7 @@ const App = () => {
       return ( <List className="message-list"><h3>Your Colorberry Messages</h3>
       <ul className="list">{messages.map((singleMessage) => (
         <MessageList message={singleMessage} key={singleMessage._id} selectMessage={selectMessage} />
-      ))}<button onClick={() => {
-        setMakeNew(true);
-        setMessageSelected(false);
-      }}>Make a new Colorberry</button></ul>
+      ))}</ul>
       </List>
       )
     } else {
@@ -94,6 +91,10 @@ const App = () => {
       </div>
 
       <MessageListRender />
+      <button className="new-button" onClick={() => {
+        setMakeNew(true);
+        setMessageSelected(false);
+      }}>Make a new Colorberry</button>
       { makeNew ? < MakeNewMessage email={emailRef} handleFormSubmit={handleFormSubmit}/> : null }
       { messageSelected ? < Message message={currentMessage} /> : null }
 
