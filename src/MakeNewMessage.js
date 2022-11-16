@@ -17,7 +17,8 @@ const MakeNewMessage = ({email, handleFormSubmit}) => {
 
     handleFormSubmit(messageObject);
   }
-
+  
+ //it would be better to have these useState so that the person could see it
   return (
     <div className="new-message">
       <h2>Make a new Colorberry Here!</h2>
