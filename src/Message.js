@@ -26,7 +26,6 @@ const TextBlock = styled.div`
 
 const Text = styled.div`
   font-size: 5vh;
-  line-height:
   display: flex;
   width: 50%;
   margin: auto;

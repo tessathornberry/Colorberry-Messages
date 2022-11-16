@@ -14,6 +14,9 @@ const App = () => {
   const emailRef = useRef('');
   const [messagesVisible, setMessagesVisible] = useState(false);
   const [makeNew, setMakeNew] = useState(false);
+  const [makeNewButton, setMakeNewButton] = useState(false);
+
+
 
 
   // useEffect(() => {
@@ -40,11 +43,13 @@ const App = () => {
         setMessagesVisible(true);
         setMessages(response.data);
       } else {
-        setMakeNew(true);
+        // setMakeNew(true);
+        // setMakeNewButton(true);
         setMessagesVisible(false);
         setMessageSelected(false);
 
       }
+      setMakeNewButton(true);
       // console.log(response.data);
     })
     .catch(err => console.log('error with get', err));
@@ -57,6 +62,8 @@ const App = () => {
   }
 
   const selectMessage = (messageInput) => {
+    setMakeNewButton(true);
+
     // console.log(messageInput);
     setMessageSelected(true);
     setMakeNew(false);
@@ -77,7 +84,7 @@ const App = () => {
   };
 
 
-
+ //the actual app
   return (
     <div className="App">
       <img className="berry" src={berry} alt="a berry"/>
@@ -86,18 +93,19 @@ const App = () => {
         <label>
         <input type="email" ref={emailRef}  placeholder="Your e-mail address ..." required/>
       </label>
-      <button type="submit">Submit</button>
+      <button className="e-mail-button" type="submit">Submit</button>
       </form>
       </div>
-
+      <div className="color-berry">
       <MessageListRender />
-      <button className="new-button" onClick={() => {
+      {makeNewButton ? <button className="new-button" onClick={() => {
         setMakeNew(true);
         setMessageSelected(false);
-      }}>Make a new Colorberry</button>
+        setMakeNewButton(false);
+      }}>Make a new Colorberry</button> : null }
       { makeNew ? < MakeNewMessage email={emailRef} handleFormSubmit={handleFormSubmit}/> : null }
       { messageSelected ? < Message message={currentMessage} /> : null }
-
+      </div>
     </div>
   );
 }
