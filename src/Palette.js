@@ -22,5 +22,5 @@ export default Palette;
 
 const PaletteBox = styled.div`
 border-radius: 10px;
-margin: 20px;;
+margin: 20px;
 `;

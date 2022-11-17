@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  padding: 2vh;
 }
 
 
@@ -67,9 +68,13 @@ Grids
     grid-template-columns:25% 50% 25%;
     grid-template-rows: auto auto auto;
     grid-template-areas:
-    "sidebar new-button end"
-    "sidebar message end"
-    "sidebar message end";
+    "sidebar new-button palette"
+    "sidebar message palette"
+    "sidebar message palette";
+  }
+
+  .palette {
+    grid-area: palette;
   }
 
   .message-list {
@@ -124,6 +129,7 @@ Grids
     background-color:#d5d5d5;
     padding: .5vh 0 1vh 0;
     box-shadow: 10px 5px 5px rgb(160, 160, 160);
+    /* z-index: 1; */
   }
 
   /*
@@ -269,4 +275,29 @@ input {
 form {
   align-items: center;
   justify-content: center;
+}
+
+@keyframes rightcorner {
+  0% {
+      transform: translate(-200px, 150px);
+  }
+  15% {
+      transform: translate(-300px, 200px);
+  }
+
+  40% {
+      transform: translate(-200px, 300px);
+  }
+  65% {
+      transform: translate(-25px, 150px);
+  }
+      75% {
+      transform: translate(-15px, 50px);
+  }
+          80% {
+      transform: translate(0, 10px);
+  }
+  100% {
+      transform: translate(0, 0);
+  }
 }

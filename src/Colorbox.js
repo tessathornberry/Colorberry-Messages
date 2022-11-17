@@ -20,6 +20,12 @@ display: inline-block;
 width: 5vw;
 height:5vh;
 border: 2px solid black;
-// background-color: blue;
 margin-left: .5vw;
+box-shadow: inset 1px 2px 1px 1px #000;
+&:active {
+  color: white;
+  background-color: #3b6b3e;
+  transform: translateY(4px);
+}
+
 `

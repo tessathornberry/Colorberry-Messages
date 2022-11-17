@@ -1,6 +1,7 @@
 import React, {useRef, useState} from 'react';
 import Palette from './Palette.js';
 import styled from 'styled-components';
+import strawberry from './assets/strawberrydown.png';
 
 const MakeNewMessage = ({email, handleFormSubmit, handleSeeList}) => {
   const colorRef = useRef('');
@@ -8,7 +9,8 @@ const MakeNewMessage = ({email, handleFormSubmit, handleSeeList}) => {
   const [currentColor, setCurrentColor] = useState('white');
   const [fontColor, setFontColor] = useState('black');
   const [messageText, setMessageText] = useState('');
-  const [currentFontColor, setCurrentFontColor] = useState('black')
+  const [currentFontColor, setCurrentFontColor] = useState('black');
+  const [currentBox1Color, setCurrentBox1Color] = useState('white')
 
   const nameRef = useRef('');
 
@@ -36,17 +38,26 @@ const MakeNewMessage = ({email, handleFormSubmit, handleSeeList}) => {
       <TextBlock className="newbox" style={{backgroundColor:`${currentColor}`, color: `${currentFontColor}`}} onClick={(event) => {
         event.preventDefault();
         setCurrentColor(selectedColor);
-      }}><Text>{messageText}</Text></TextBlock>
+      }}><Box1 style={{backgroundColor:`${currentBox1Color}`}} onClick={(event) => {
+        event.stopPropagation();
+        event.preventDefault();
+        setCurrentBox1Color(selectedColor);
+      }}><Strawberry src={strawberry} alt="a strawberry"></Strawberry></Box1>
+        <Text>{messageText}</Text>
+      </TextBlock>
+
+                <Instructions>
+        <p>How To Color:</p>Select a color from the palette and click the message. <br></br><br></br>For font color, select a color and then Click <b onClick={() => setCurrentFontColor(selectedColor)} style={{backgroundColor:`${currentFontColor}`, cursor: "pointer", fontSize: "4vh", padding: `0 8px 0 8px`, margin: `0 8px 5px 8px`, border: `1px solid black`, borderRadius: `5px`, boxShadow: `5px 5px 5px ${selectedColor}`}}>HERE</b> </Instructions>
       <Palette colorRef={colorRef} selectColor={selectColor}/>
       <form onSubmit={(event) => {
         event.preventDefault();
         assembleMessage()}}>
 
+
       <div className="messageLabel" onClick={() => {
         console.log(selectedColor);
         setFontColor(selectedColor);
-      }}><label>Message: <br></br>
-        (Click <b onClick={() => setCurrentFontColor(selectedColor)} style={{color:`${currentFontColor}`, cursor: "pointer", padding: `0 8px 0 8px`, borderRadius: `5px`, boxShadow: `5px 5px 5px #a0a0a0`}}>HERE</b> with color to change font color)</label>
+      }}><label>Message: </label>
         <input className="message-label-input" type="text" value={messageText} maxLength="80" onChange={(event) => setMessageText(event.target.value)} placeholder="your message..." required/>
         </div>
         <br></br>
@@ -66,6 +77,11 @@ const MakeNewMessage = ({email, handleFormSubmit, handleSeeList}) => {
 
 export default MakeNewMessage;
 
+const Instructions = styled.div`
+margin-top: 15px;
+padding: 10px;
+font-size: 3vh;
+`
 
 const TextBlock = styled.div`
   width: 50vw;
@@ -80,6 +96,8 @@ const TextBlock = styled.div`
   word-wrap: break-word;
   inline-size: 150px;
   overflow-wrap: break-word;
+position: relative;
+
 `;
 
 const Text = styled.div`
@@ -96,3 +114,22 @@ const Text = styled.div`
   overflow-wrap: break-word;
   overflow: hidden;
 `;
+
+const Box1 = styled.div`
+margin: -20px;
+z-index: 2;
+width: 75px;
+height: 75px;
+border-radius: 10px;
+border: 4px solid black;
+position: absolute;
+left: 0;
+top: 0;
+&:animation: rightcorner 2s linear 0s infinite alternate;
+`;
+
+const Strawberry = styled.img`
+width: 100%;
+height: auto;
+`;
+
