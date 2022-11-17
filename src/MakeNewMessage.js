@@ -3,13 +3,13 @@ import Palette from './Palette.js';
 import styled from 'styled-components';
 import strawberry from './assets/strawberrydown.png';
 
-const MakeNewMessage = ({email, handleFormSubmit, handleSeeList}) => {
+const MakeNewMessage = ({email, handleFormSubmit, handleSeeList, password}) => {
   const colorRef = useRef('');
   const [selectedColor, setSelectedColor] = useState('white');
   const [currentColor, setCurrentColor] = useState('white');
   const [fontColor, setFontColor] = useState('black');
   const [messageText, setMessageText] = useState('');
-  const [currentFontColor, setCurrentFontColor] = useState('black');
+  const [currentFontColor, setCurrentFontColor] = useState('lightGreen');
   const [currentBox1Color, setCurrentBox1Color] = useState('white')
 
   const nameRef = useRef('');
@@ -17,15 +17,18 @@ const MakeNewMessage = ({email, handleFormSubmit, handleSeeList}) => {
   var selectColor = (color) => {
     setSelectedColor(color);
   }
-
+  console.log('password', password);
 
   var assembleMessage = () => {
     var messageObject = {};
     messageObject.email = email;
+    messageObject.password = password;
     messageObject.color = currentColor;
-    messageObject.fontColor = fontColor;
+    messageObject.box1 = currentBox1Color;
+    messageObject.fontColor = currentFontColor;
     messageObject.message = messageText;
     messageObject.messagename = nameRef.current.value;
+
     console.log('MessageObject', messageObject);
     handleFormSubmit(messageObject);
   }
@@ -38,26 +41,26 @@ const MakeNewMessage = ({email, handleFormSubmit, handleSeeList}) => {
       <TextBlock className="newbox" style={{backgroundColor:`${currentColor}`, color: `${currentFontColor}`}} onClick={(event) => {
         event.preventDefault();
         setCurrentColor(selectedColor);
-      }}><Box1 style={{backgroundColor:`${currentBox1Color}`}} onClick={(event) => {
+      }}>
+        <Box1 style={{backgroundColor:`${currentBox1Color}`}} onClick={(event) => {
         event.stopPropagation();
         event.preventDefault();
         setCurrentBox1Color(selectedColor);
-      }}><Strawberry src={strawberry} alt="a strawberry"></Strawberry></Box1>
+      }}>
+        <Strawberry src={strawberry} alt="a strawberry"></Strawberry></Box1>
+
         <Text>{messageText}</Text>
       </TextBlock>
 
                 <Instructions>
-        <p>How To Color:</p>Select a color from the palette and click the message. <br></br><br></br>For font color, select a color and then Click <b onClick={() => setCurrentFontColor(selectedColor)} style={{backgroundColor:`${currentFontColor}`, cursor: "pointer", fontSize: "4vh", padding: `0 8px 0 8px`, margin: `0 8px 5px 8px`, border: `1px solid black`, borderRadius: `5px`, boxShadow: `5px 5px 5px ${selectedColor}`}}>HERE</b> </Instructions>
+        How To Color: Select a color from the palette and click the message. <br></br>For font color, select a color and then Click <b onClick={() => setCurrentFontColor(selectedColor)} style={{backgroundColor:`${currentFontColor}`, cursor: "pointer", fontSize: "4vh", padding: `0 8px 0 8px`, margin: `0 8px 5px 8px`, border: `1px solid black`, borderRadius: `5px`, boxShadow: `5px 5px 5px ${selectedColor}`}}>HERE</b> </Instructions>
       <Palette colorRef={colorRef} selectColor={selectColor}/>
       <form onSubmit={(event) => {
         event.preventDefault();
         assembleMessage()}}>
 
 
-      <div className="messageLabel" onClick={() => {
-        console.log(selectedColor);
-        setFontColor(selectedColor);
-      }}><label>Message: </label>
+      <div className="messageLabel" ><label>Message: </label>
         <input className="message-label-input" type="text" value={messageText} maxLength="80" onChange={(event) => setMessageText(event.target.value)} placeholder="your message..." required/>
         </div>
         <br></br>
@@ -80,7 +83,7 @@ export default MakeNewMessage;
 const Instructions = styled.div`
 margin-top: 15px;
 padding: 10px;
-font-size: 3vh;
+font-size: 2.5vh;
 `
 
 const TextBlock = styled.div`
@@ -129,6 +132,8 @@ top: 0;
 `;
 
 const Strawberry = styled.img`
+// margin: -20px;
+
 width: 100%;
 height: auto;
 `;

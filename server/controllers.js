@@ -2,7 +2,7 @@ const models = require('./models.js');
 
 module.exports = {
   getMessages: (req, res) => {
-    var params = req.query || {};
+    var params = req.query;
     models.getUserMessages(params)
       .then(results => {
         res.send(results).end();})

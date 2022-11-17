@@ -4,7 +4,7 @@ import Colorbox from './Colorbox.js';
 
 const Palette = ({colorRef, selectColor}) => {
   var firstColors = ['red', 'orange', 'yellow', 'green', 'blue', 'purple'];
-  var secondColors = ['pink', 'black', 'white', 'brown', 'teal', 'lightBlue'];
+  var secondColors = ['pink', 'black', 'white', 'brown', 'teal', 'lightGreen'];
 
   const mappedPalette = (colorArray) => {
     return colorArray.map((color) => (<Colorbox color={color} key={color} selectColor={selectColor}/>))

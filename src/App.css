@@ -79,9 +79,12 @@ Grids
 
   .message-list {
     grid-area: sidebar;
-    /* border: 2px solid pink; */
+    /* border: 2px solid pink;
+    background: white;
+    border-radius: 10px; */
     align-items:flex-start;
   }
+
 
   .message-block {
   grid-area: message;
@@ -141,6 +144,7 @@ Header
     display: flex;
     justify-content: center;
     align-items: center;
+    cursor: default;
   }
 
   .header1 {
@@ -171,6 +175,7 @@ E-mail box
   padding: 10px;
   align-items:center;
   justify-content:center;
+  cursor: default;
 }
 
 /* .e-mail-button { */
@@ -227,7 +232,7 @@ E-mail box
   align-content: flex-start;
   align-items: flex-start;
   overflow: auto;
-  cursor: pointer;
+  cursor: default;
   top: 0;
 }
 
@@ -301,3 +306,4 @@ form {
       transform: translate(0, 0);
   }
 }
+

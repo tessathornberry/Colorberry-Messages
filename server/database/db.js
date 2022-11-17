@@ -7,6 +7,9 @@ mongoose.connect(uri, {useNewUrlParser: true});
 
 const colorBasicSchema = new Schema({
   email: {type: String, required: true},
+  password: {type: String, required: true},
+  codeString: {type: String, required: true},
+  box1: {type: String, default: 'white'},
   color: {type: String, default: 'white'},
   fontColor: {type: String, default: 'black'},
   messagename: {type: String, required: true},
@@ -14,6 +17,8 @@ const colorBasicSchema = new Schema({
 });
 
 const BasicMessage = mongoose.model('BasicMessage', colorBasicSchema);
+const BerryMessage = mongoose.model('BerryMessage', colorBasicSchema);
+
 
 const db = mongoose.connection;
 
@@ -27,3 +32,5 @@ db.once('open', () => {
 
 module.exports.db = db;
 module.exports.BasicMessage = BasicMessage;
+module.exports.BerryMessage = BerryMessage;
+
