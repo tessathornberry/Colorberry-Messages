@@ -74,7 +74,7 @@ Grids
 
   .message-list {
     grid-area: sidebar;
-    border: 2px solid pink;
+    /* border: 2px solid pink; */
     align-items:flex-start;
   }
 
@@ -88,7 +88,7 @@ Grids
 
   .newbox {
     grid-area: message;
-    box-shadow: 10px 5px 5px rgb(160, 160, 160);
+    box-shadow: 10px 5px 5px #a0a0a0;
     margin: auto;
     padding: 20px;
     /* border: 2px solid blue; */
@@ -206,7 +206,7 @@ E-mail box
 */
 
 .color-berry {
-  /* border: 2px solid pink; */
+  position: relative;
   border-radius: 10px;
   width: 100%;
   margin-bottom: 10vh;
@@ -214,9 +214,14 @@ E-mail box
 }
 
 .message-list {
+  float:left;
+  position: absolute;
+  top: 0;
+  justify-content: flex-start;
+  align-content: flex-start;
+  align-items: flex-start;
   overflow: auto;
   cursor: pointer;
-  position: relative;
   top: 0;
 }
 

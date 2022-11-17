@@ -2,29 +2,29 @@ import React, {useRef, useState} from 'react';
 import Palette from './Palette.js';
 import styled from 'styled-components';
 
-const MakeNewMessage = ({email, handleFormSubmit}) => {
+const MakeNewMessage = ({email, handleFormSubmit, handleSeeList}) => {
   const colorRef = useRef('');
   const [selectedColor, setSelectedColor] = useState('white');
   const [currentColor, setCurrentColor] = useState('white');
+  const [fontColor, setFontColor] = useState('black');
+  const [messageText, setMessageText] = useState('');
+  const [currentFontColor, setCurrentFontColor] = useState('black')
 
-  const fontRef = useRef('');
-  const messageRef = useRef('');
   const nameRef = useRef('');
 
   var selectColor = (color) => {
     setSelectedColor(color);
-    console.log(color);
   }
+
 
   var assembleMessage = () => {
     var messageObject = {};
-    messageObject.email = email.current.value;
-    messageObject.color = colorRef.current.value;
-    messageObject.fontColor = fontRef.current.value;
-    messageObject.message = messageRef.current.value;
+    messageObject.email = email;
+    messageObject.color = currentColor;
+    messageObject.fontColor = fontColor;
+    messageObject.message = messageText;
     messageObject.messagename = nameRef.current.value;
-    // console.log('messageObject', messageObject);
-
+    console.log('MessageObject', messageObject);
     handleFormSubmit(messageObject);
   }
 
@@ -32,55 +32,67 @@ const MakeNewMessage = ({email, handleFormSubmit}) => {
   return (
     <div className="new-message">
       <h2>Make a new Colorberry Here!</h2>
+
+      <TextBlock className="newbox" style={{backgroundColor:`${currentColor}`, color: `${currentFontColor}`}} onClick={(event) => {
+        event.preventDefault();
+        setCurrentColor(selectedColor);
+      }}><Text>{messageText}</Text></TextBlock>
+      <Palette colorRef={colorRef} selectColor={selectColor}/>
       <form onSubmit={(event) => {
         event.preventDefault();
         assembleMessage()}}>
 
-      <div className="messageLabel" ><label>Message:</label>
-        <input className="message-label-input" type="text" ref={messageRef}  placeholder="your message..." required/>
+      <div className="messageLabel" onClick={() => {
+        console.log(selectedColor);
+        setFontColor(selectedColor);
+      }}><label>Message: <br></br>
+        (Click <b onClick={() => setCurrentFontColor(selectedColor)} style={{color:`${currentFontColor}`, cursor: "pointer", padding: `0 8px 0 8px`, borderRadius: `5px`, boxShadow: `5px 5px 5px #a0a0a0`}}>HERE</b> with color to change font color)</label>
+        <input className="message-label-input" type="text" value={messageText} maxLength="80" onChange={(event) => setMessageText(event.target.value)} placeholder="your message..." required/>
         </div>
         <br></br>
         <div className="messageLabel" >
       <label>Message Name: </label>
-        <input className="message-label-input" type="text" ref={nameRef}  placeholder="Name your message..." required/>
+        <input className="message-label-input" type="text" ref={nameRef} maxLength="18" placeholder="Name your message..." required/>
         </div>
       <br></br>
 
-      <GridBox className="newbox" style={{backgroundColor:`${currentColor}`}} onClick={(event) => {
-        event.preventDefault();
-        setCurrentColor(selectedColor);
 
-      }} />
-      <Palette colorRef={colorRef} selectColor={selectColor}/>
-
-      <button type="submit">Submit</button>
+      <button type="submit">Submit</button><br></br>
       </form>
-
+      <button className="see-list" onClick={() => handleSeeList()} >See My List</button>
     </div>
   )
 }
 
 export default MakeNewMessage;
 
-const GridBox = styled.div`
-  margin-top: 20px;
-  width: 100%;
-  height: 20vh;
-  border: 2px solid black;
-  border-radius: 10px;
-  cursor: pointer; //may need to oomph this
+
+const TextBlock = styled.div`
   width: 50vw;
   max-width: 400px;
   min-width: 400px;
   height: 25vh;
   border: 2px solid black;
   border-radius: 10px;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: space-around;
-  -webkit-justify-content: space-around;
-  -ms-flex-pack: space-around;
   justify-content: space-around;
+  text-size-adjust: auto;
+  word-wrap: break-word;
+  inline-size: 150px;
+  overflow-wrap: break-word;
+`;
+
+const Text = styled.div`
+  font-size: 4vh;
+  // display: flex;
+  width: 50%;
+  // overflow: scroll;
+  margin: auto;
+  align-items:center;
+  justify-content:center;
+  flex-wrap: wrap;
+  word-wrap: break-word;
+  inline-size: 350px;
+  overflow-wrap: break-word;
+  overflow: hidden;
 `;

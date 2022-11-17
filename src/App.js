@@ -10,7 +10,7 @@ import styled from 'styled-components';
 const App = () => {
   const [messages, setMessages] = useState([]);
   const [currentMessage, setCurrentMessage] = useState({});
-  const emailRef = useRef('');
+  const [emailEntry, setEmailEntry] = useState('');
   const [messageSelected, setMessageSelected] = useState(false);
   const [messagesVisible, setMessagesVisible] = useState(false);
   const [makeNew, setMakeNew] = useState(false);
@@ -18,7 +18,7 @@ const App = () => {
   const [emailFormVisible, setEmailFormVisible] = useState(true);
 
 
-
+  console.log(emailEntry)
 
   // useEffect(() => {
 
@@ -36,7 +36,9 @@ const App = () => {
     })
     .catch(err => console.log('could not post'));
   }
-
+  const handleSeeList = () => {
+    setMessagesVisible(!messagesVisible);
+  }
   const fetchMessages = (email) => {
     axios.get("http://localhost:3000/messages", {params: {email: email}})
     .then(response => {
@@ -56,7 +58,7 @@ const App = () => {
 
   const handleEmailSubmit = (event) => {
     event.preventDefault();
-    var emailEntered = emailRef.current.value;
+    var emailEntered = emailEntry;
     fetchMessages(emailEntered);
     setEmailFormVisible(false);
     setMessageSelected(false);
@@ -64,6 +66,7 @@ const App = () => {
   }
 
   const handleGoBack = () => {
+    setEmailEntry('');
     setEmailFormVisible(true);
     setMakeNew(false);
     setMessageSelected(false);
@@ -99,17 +102,16 @@ const App = () => {
     <div className="App">
       <div className="berry-header"><h1 className="header1">Color</h1><img className="berry" src={berry} alt="a berry"/><h1 className="header2">Berry</h1></div>
 
-      {emailFormVisible ? <div className="email"><h1>Put in your e-mail address to get started</h1>
+      { emailFormVisible ? <div className="email"><h1>Put in your e-mail address to get started</h1>
       <form onSubmit={handleEmailSubmit}>
         <div><label>
-        <input type="email" ref={emailRef}  placeholder="Your e-mail address ..." required/>
+        <input type="email" value={emailEntry}  onChange={(event) => setEmailEntry(event.target.value)} placeholder="Your e-mail address ..." required/>
       </label></div>
       <button className="e-mail-button" type="submit">Submit</button>
       </form>
-      </div> :
-      <div className="email"><h1>Click button to start over</h1>
+      </div> : <div className="email"><h1>Click button to start over</h1>
       <button onClick={handleGoBack}>Start Over</button>
-      </div>}
+      </div> }
       <div className="color-berry">
       <MessageListRender />
       {makeNewButton ? <button className="new-button" onClick={() => {
@@ -117,10 +119,9 @@ const App = () => {
         setMessageSelected(false);
         setMakeNewButton(false);
         setMessagesVisible(false);
-        emailFormVisible(false);
-
+        setEmailFormVisible(false);
       }}>Make a new Colorberry</button> : null }
-      { makeNew ? < MakeNewMessage email={emailRef} handleFormSubmit={handleFormSubmit}/> : null }
+      { makeNew ? < MakeNewMessage email={emailEntry} handleSeeList={handleSeeList} handleFormSubmit={handleFormSubmit}/> : null }
       { messageSelected ? < Message message={currentMessage} /> : null }
       </div>
     </div>
