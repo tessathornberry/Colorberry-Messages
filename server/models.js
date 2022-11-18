@@ -7,7 +7,10 @@ const db = require('./database/db.js');
 module.exports = {
   getUserMessages: (params) => {
     // var results = db.BasicMessage.find(params);
-    var results = db.BerryMessage.find(params);
+    var results = db.BerryMessage.find(params, {email: 0, password:0, codeString: 0, _id: 0});
+    // delete results[0].email;
+    // delete results[0].password;
+    // delete results[0].codeString;
 
     // console.log(results);
     return results;
