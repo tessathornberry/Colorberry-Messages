@@ -5,15 +5,6 @@ module.exports = {
     var params = req.query;
     models.getUserMessages(params)
       .then(results => {
-        //cut out e-mail and password - see if those can be stored in state instead
-        // delete results[0]._id;
-        delete results[0].email;
-        delete results[0].password;
-        delete results[0].codeString;
-
-
-
-        console.log('results', results[0])
         res.send(results).end();})
       .catch(err => res.sendStatus(500).end());
   },

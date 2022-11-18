@@ -17,7 +17,7 @@ const MakeNewMessage = ({email, handleFormSubmit, handleSeeList, password}) => {
   var selectColor = (color) => {
     setSelectedColor(color);
   }
-  console.log('password', password);
+  // console.log('password', password);
 
   var assembleMessage = () => {
     var messageObject = {};
@@ -29,7 +29,7 @@ const MakeNewMessage = ({email, handleFormSubmit, handleSeeList, password}) => {
     messageObject.message = messageText;
     messageObject.messagename = nameRef.current.value;
 
-    console.log('MessageObject', messageObject);
+    // console.log('MessageObject', messageObject);
     handleFormSubmit(messageObject);
   }
 

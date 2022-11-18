@@ -8,7 +8,6 @@ mongoose.connect(uri, {useNewUrlParser: true});
 const colorBasicSchema = new Schema({
   email: {type: String, required: true},
   password: {type: String, required: true},
-  codeString: {type: String, required: true},
   box1: {type: String, default: 'white'},
   color: {type: String, default: 'white'},
   fontColor: {type: String, default: 'black'},
@@ -31,6 +30,7 @@ db.once('open', () => {
 })
 
 module.exports.db = db;
+
 module.exports.BasicMessage = BasicMessage;
 module.exports.BerryMessage = BerryMessage;
 

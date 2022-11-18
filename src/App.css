@@ -44,13 +44,25 @@ Grids
   /* grid-gap: 5px; */
   display: grid;
   grid-template-columns: auto 20% 400px 20% auto;
-  grid-template-rows: 25vh auto auto;
+  grid-template-rows: 25vh auto auto auto auto;
   grid-template-areas:
     ". berry-header berry-header berry-header ."
     ". email-form email-form email-form ."
+    ". code code code ."
+
     "color-berry color-berry color-berry color-berry color-berry"
+    ". link link link ."
+
   }
 
+  .message-link {
+    grid-area: link;
+  }
+
+  .code {
+    grid-area: code;
+
+  }
   .berry-header {
     grid-area: berry-header;
   }
@@ -79,9 +91,6 @@ Grids
 
   .message-list {
     grid-area: sidebar;
-    /* border: 2px solid pink;
-    background: white;
-    border-radius: 10px; */
     align-items:flex-start;
   }
 
@@ -168,7 +177,7 @@ E-mail box
 ========================================
 */
 
-.email {
+.email-outline {
   border: 2px solid pink;
   border-radius: 20px;
   margin: auto;
@@ -211,6 +220,9 @@ button:active {
   transform: translateY(4px);
 }
 
+.id-input {
+  margin-top:2vh;
+}
   /*
 E-mail box
 ========================================
@@ -282,28 +294,12 @@ form {
   justify-content: center;
 }
 
-@keyframes rightcorner {
-  0% {
-      transform: translate(-200px, 150px);
-  }
-  15% {
-      transform: translate(-300px, 200px);
-  }
+.message-link {
+  margin: auto;
+  margin-top: -10vh;
+  font-size: 3vh;
+  width: 40vw;
+  line-height: 125%;
 
-  40% {
-      transform: translate(-200px, 300px);
-  }
-  65% {
-      transform: translate(-25px, 150px);
-  }
-      75% {
-      transform: translate(-15px, 50px);
-  }
-          80% {
-      transform: translate(0, 10px);
-  }
-  100% {
-      transform: translate(0, 0);
-  }
+
 }
-
