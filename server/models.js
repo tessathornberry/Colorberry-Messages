@@ -6,7 +6,13 @@ const db = require('./database/db.js');
 
 module.exports = {
   getUserMessages: (params) => {
-    var results = db.BerryMessage.find(params, {email: 0, password:0});
+    console.log('params', params);
+    var requestObject = {};
+    requestObject.email = params.email;
+    requestObject.password = params.password;
+
+
+    var results = db.BerryMessage.find(requestObject, {email: 0, password:0});
     return results;
   },
 
