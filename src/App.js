@@ -149,7 +149,6 @@ const App = () => {
       }}>Make a new Colorberry</button> : null }
       { makeNew ? < MakeNewMessage email={emailEntry} password={passwordEntry} handleSeeList={handleSeeList} handleFormSubmit={handleFormSubmit}/> : null }
       { messageSelected ? < Message message={currentMessage} /> : null }
-      {/* { justPosted ? <div><p>Please copy and send this code and link to your ColorBerry recipient!</p><a href="http://localhost:2999">ColorBerry Link</a><br></br></div> : null } */}
       </div>
       { justPosted ? <div className="message-link"><p>Please copy this address and code and send both to your ColorBerry recipient!</p>See your ColorBerry Message at:  <b><a href={`http://localhost:2999`}> http://localhost:2999</a></b><br></br>ColorBerry Code:  <b>{newID}</b></div> : null }
     </div>
