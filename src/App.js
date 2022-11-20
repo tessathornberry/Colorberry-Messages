@@ -22,6 +22,7 @@ const App = () => {
   const [idUsed, setIdUsed] = useState(false);
   const [justPosted, setJustPosted] = useState(false);
   const [newID, setNewID] = useState('');
+  const [friendEmailEntry, setFriendEmailEntry] = useState('');
 //    messageObject.messagename = nameRef.current.value;
 
   const handleIdSubmit = (event) => {
@@ -150,7 +151,9 @@ const App = () => {
       { makeNew ? < MakeNewMessage email={emailEntry} password={passwordEntry} handleSeeList={handleSeeList} handleFormSubmit={handleFormSubmit}/> : null }
       { messageSelected ? < Message message={currentMessage} /> : null }
       </div>
-      { justPosted ? <div className="message-link"><p>Please copy this address and code and send both to your ColorBerry recipient!</p>See your ColorBerry Message at:  <b><a href={`http://localhost:2999`}> http://localhost:2999</a></b><br></br>ColorBerry Code:  <b>{newID}</b></div> : null }
+      {/* { justPosted ? <div className="message-link"><p>Please copy this address and code and send both to your ColorBerry recipient!</p>See your ColorBerry Message at:  <b><a href={`http://localhost:2999`}> http://localhost:2999</a></b><br></br>ColorBerry Code:  <b>{newID}</b></div> : null } */}
+      { justPosted ? <div className="message-link"><p>Please copy the below web-address and code and send both to your ColorBerry recipient, OR, you can enter their e-mail address here and click on it below, and a new tab will open with their message ready to send</p><form><input type="email" value={friendEmailEntry}  onChange={(event) => setFriendEmailEntry(event.target.value)} placeholder="Recipient's e-mail address..." required/></form>
+      <a target="_blank" rel="noreferrer" href={`mailto:${friendEmailEntry}?subject=You%20Have%20Received%20a%20ColorBerry%20Message!&body=To%20view%20your%20message%2C%20right%20click%20the%20code%20to%20copy%20it%20and%20enter%20it%20in%20the%20code%20box%20at%20http%3A%2F%2Flocalhost%3A2999%2Fmessages.%0D%0A%0D%0ACode%3A%20${newID}`}>{friendEmailEntry}</a><div><br></br><CopyCode>See your ColorBerry Message at:  <b><a href={`http://localhost:2999`}> http://localhost:2999</a></b><br></br>ColorBerry Code:  <b>{newID}</b></CopyCode></div></div> : null}
     </div>
   );
 }
@@ -179,3 +182,11 @@ margin: auto;
 align-items: center;
 justify-content: space-around;
 `
+
+const CopyCode = styled.div`
+border: 2px solid pink;
+border-radius: 10px;
+padding: 5px;
+margin-bottom: 20px;
+
+`;

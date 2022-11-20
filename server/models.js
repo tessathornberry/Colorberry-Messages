@@ -8,10 +8,12 @@ module.exports = {
   getUserMessages: (params) => {
     console.log('params', params);
     var requestObject = {};
-    requestObject.email = params.email;
-    requestObject.password = params.password;
-
-
+    if (params._id) {
+      requestObject._id = params._id;
+    } else if (params.email) {
+      requestObject.email = params.email;
+      requestObject.password = params.password;
+    }
     var results = db.BerryMessage.find(requestObject, {email: 0, password:0});
     return results;
   },
