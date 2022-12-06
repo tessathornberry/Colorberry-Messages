@@ -1,10 +1,10 @@
-import React, {useState, useRef} from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import Colorbox from './Colorbox.js';
 
 const Palette = ({colorRef, selectColor}) => {
   var firstColors = ['red', 'orange', 'yellow', 'green', 'blue', 'purple'];
-  var secondColors = ['pink', 'black', 'white', 'brown', 'teal', 'lightGreen'];
+  var secondColors = ['pink', 'black', 'white', 'brown', 'teal', 'lightGreen']; //can make another palette , `#aabb00` is nice
 
   const mappedPalette = (colorArray) => {
     return colorArray.map((color) => (<Colorbox color={color} key={color} selectColor={selectColor}/>))

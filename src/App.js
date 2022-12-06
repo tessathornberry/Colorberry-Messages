@@ -1,5 +1,5 @@
 import './App.css';
-import React, {useState, useEffect, useRef} from 'react';
+import React, {useState, useRef} from 'react';
 import axios from 'axios';
 import Message from './Message.js';
 import MessageList from './MessageList.js';
@@ -44,7 +44,9 @@ const App = () => {
       //make hyperlink
 
   const handleFormSubmit = (newMessageObject) => {
-    axios.post("http://localhost:3000/messages", newMessageObject, {headers: {"Access-Control-Allow-Origin": "http://localhost:2999"}}) //might not need this anymore
+    axios.post("http://localhost:3000/messages", newMessageObject) //might not need this anymore
+
+    // axios.post("http://localhost:3000/messages", newMessageObject, {headers: {"Access-Control-Allow-Origin": "http://localhost:2999"}}) //might not need this anymore
     .then(results => {
       console.log('results', results.data._id);
       setNewID(results.data._id);
