@@ -1,6 +1,9 @@
 # Colorberry-Messages
 A simple messaging app where you can color in the messages
 
+<p align="center">
+  <img src="./src/assets/ColorBerryScreen.png" alt="Png of the front page of the colerberry messages web app" width="720" height="auto" >
+</p>
 
 # Getting Started with Create React App
 
@@ -44,7 +47,7 @@ See the section about [deployment](https://facebook.github.io/create-react-app/d
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <a href="https://github.com/github_username/repo_name">
+  <a href="https://github.com/tessathornberry/Colorberry-Messages.git">
     <img src="public/strawberryicon.png" alt="StrLogo" width="80" height="80">
   </a>
 
@@ -97,10 +100,10 @@ See the section about [deployment](https://facebook.github.io/create-react-app/d
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-<p align="center">
+<!-- <p align="center">
   <img src="./src/assets/ColorBerryScreen.png" alt="Png of the front page of the colerberry messages web app" width="720" height="auto" >
 </p>
-
+ -->
 Here's a blank template to get started: To avoid retyping too much info. Do a search and replace with your text editor for the following: `github_username`, `repo_name`, `twitter_handle`, `linkedin_username`, `email_client`, `email`, `project_title`, `project_description`
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
