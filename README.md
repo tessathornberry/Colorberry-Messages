@@ -97,7 +97,9 @@ See the section about [deployment](https://facebook.github.io/create-react-app/d
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
+<p align="center">
+  <img src="./src/assets/ColorBerryScreen.png" alt="Png of the front page of the colerberry messages web app" width="720" height="auto" >
+</p>
 
 Here's a blank template to get started: To avoid retyping too much info. Do a search and replace with your text editor for the following: `github_username`, `repo_name`, `twitter_handle`, `linkedin_username`, `email_client`, `email`, `project_title`, `project_description`
 
