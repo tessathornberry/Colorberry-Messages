@@ -216,8 +216,8 @@ Project Link: [https://github.com/github_username/repo_name](https://github.com/
 <!-- ACKNOWLEDGMENTS -->
 ## Acknowledgments
 
-* []()
-* []()
+* Green vines background/banner <a href="https://www.freepik.com/free-vector/seamless-intertwined-branches-leaves-pattern_10601246.htm#query=website%20background%20green%20leaves&position=3&from_view=search&track=sph">Image by macrovector</a> on Freepik
+* Berry painting by <a href="http://www.tessathornberry.com">Tessa Thornberry</a>
 * []()
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
