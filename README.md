@@ -46,7 +46,27 @@ A simple messaging app where you can color in the messages
 
 <!-- ABOUT THE PROJECT -->
 ## About The Project
+This was a simple 3-day web app project; a starting point for future development. 
+In this app, one can log in, create a short message, color two boxes and the text with the palette, and save the colored-in message to the database, afterwhich, it will appear on the user's list. 
 
+<p align="center">
+  <img src="./src/assets/Colorberrycolor.gif" alt="Png of the front page of the colerberry messages web app" width="600" height="auto" >
+</p>
+
+At the time a message is created, a form allows the user two options:
+1. to either copy and paste a unique code to send to a recipient in the messaging app of their choice, or 
+2. fill the recipient's email in to make it into a mailto hot-link, that, when clicked, opens the user's default e-mail service in a new tab.
+<p align="center">
+  <img src="./src/assets/colorberryemailentry.gif" alt="Png of the front page of the colerberry messages web app" width="600" height="auto" >
+</p>
+If the user elects the second option, they are provided an e-mail prefilled with the recipient's address and the site link and code. 
+<p align="center">
+  <img src="./src/assets/colorberryemailsend.gif" alt="Png of the front page of the colerberry messages web app" width="600" height="auto" >
+</p>
+When a user copies the code and visits the site, regardless of if they are a user or not, the code will provide them with the sender's colored-in message.
+<p align="center">
+  <img src="./src/assets/Colorberryemailcode.gif" alt="Png of the front page of the colerberry messages web app" width="600" height="auto" >
+</p>
 <p align="center">
   <img src="./src/assets/ColorberryView.gif" alt="Png of the front page of the colerberry messages web app" width="600" height="auto" >
 </p>
