@@ -1,4 +1,5 @@
 # ColorBerry Messages <img src="public/strawberryicon.png" alt="StrLogo" width="80" height="80">
+<a name="readme-top"></a>
 A simple messaging app where you can color in the messages
 <p align="left">
   <img src="./src/assets/ColorBerryScreen.png" alt="Png of the front page of the colerberry messages web app" width="600" height="auto" >
