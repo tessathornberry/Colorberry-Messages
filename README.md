@@ -10,9 +10,9 @@ A simple messaging app where you can color in the messages
     <a href="https://github.com/tessathornberry/Colorberry-messages"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/github_username/repo_name/issues">Report Bug</a>
+    <a href="https://github.com/tessathornberry/Colorberry-Messages/issues">Report Bug</a>
     ·
-    <a href="https://github.com/github_username/repo_name/issues">Request Feature</a>
+    <a href="https://github.com/tessathornberry/Colorberry-Messages/issues">Request Feature</a>
   </p>
 </div>
 
@@ -72,7 +72,7 @@ Here's a blank template to get started: To avoid retyping too much info. Do a se
 <!-- GETTING STARTED -->
 ## Getting Started
 
-To get a local copy of this simple web app, follw the steps below:
+To get a local copy of this simple web app, follow the steps below:
 
 ### Prerequisites
 
@@ -82,20 +82,27 @@ This is an example of how to list things you need to use the software and how to
   npm install npm@latest -g
   ```
 * <a href="https://www.mongodb.com/docs/manual/installation/">MongoDB installed</a> and running (Community version ok)
+<br />
 ### Installation
 1. Clone the repo
    ```sh
    git clone https://github.com/tessathornberry/Colorberry-Messages.git
    ```
-2. Install NPM packages
+2. Navigate into the root directory and the server directory and install npm packages
    ```sh
    npm install
+  ---------------
+   cd server
+   npm install
    ```
-3. Enter your API in `.env`
-   ```js
-   const API_KEY = 'ENTER YOUR API';
+3. In new terminal window, navigate into the server directory and enter:
+   ```sh
+  npm run server-dev
    ```
-
+4. In new terminal window, navigate into the root directory and enter:
+   ```sh
+  npm run start
+   ```
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
