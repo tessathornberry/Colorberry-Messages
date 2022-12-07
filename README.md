@@ -37,9 +37,6 @@ A simple messaging app where you can color in the messages
       </ul>
     </li>
     <li><a href="#usage">Usage</a></li>
-    <li><a href="#roadmap">Roadmap</a></li>
-    <li><a href="#contributing">Contributing</a></li>
-    <li><a href="#license">License</a></li>
     <li><a href="#contact">Contact</a></li>
     <li><a href="#acknowledgments">Acknowledgments</a></li>
   </ol>
@@ -51,7 +48,7 @@ A simple messaging app where you can color in the messages
 ## About The Project
 
 <p align="center">
-  <img src="./src/assets/ColorBerryScreen.png" alt="Png of the front page of the colerberry messages web app" width="720" height="auto" >
+  <img src="./src/assets/ColorberryView.gif" alt="Png of the front page of the colerberry messages web app" width="600" height="auto" >
 </p>
 
 
