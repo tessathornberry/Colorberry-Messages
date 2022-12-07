@@ -81,27 +81,34 @@ To get a local copy of this simple web app, follow the steps below:
   npm install npm@latest -g
   ```
 * <a href="https://www.mongodb.com/docs/manual/installation/">MongoDB installed</a> and running (Community version ok)
-<br />
+
 ### Installation
+
 1. Clone the repo
-   ```sh
+   ```git
    git clone https://github.com/tessathornberry/Colorberry-Messages.git
    ```
 2. Navigate into the root directory and the server directory and install npm packages
-   ```sh
+
+   ```git
    npm install
-  ---------------
-   cd server
+   -----------
+   cd server/
    npm install
    ```
+   
 3. In new terminal window, navigate into the server directory and enter:
+
    ```sh
-  npm run server-dev
+   npm run server-dev
    ```
+   
 4. In new terminal window, navigate into the root directory and enter:
+
    ```sh
-  npm run start
+   npm run start
    ```
+   
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
