@@ -1,6 +1,7 @@
 const models = require('./models.js');
 
 module.exports = {
+  //handles get for e-mail/password OR for user code
   getMessages: (req, res) => {
     var params = req.query;
     models.getUserMessages(params)
@@ -8,7 +9,7 @@ module.exports = {
         res.send(results).end();})
       .catch(err => res.sendStatus(500).end());
   },
-  //make another function to handle get for string with codeString.
+
   postMessage: (req, res) => {
     var params = req.body;
     models.postUserMessage(params)
