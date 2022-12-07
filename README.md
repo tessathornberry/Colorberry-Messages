@@ -1,35 +1,9 @@
-# Colorberry-Messages
+# ColorBerry Messages <img src="public/strawberryicon.png" alt="StrLogo" width="80" height="80">
 A simple messaging app where you can color in the messages
-
 <p align="center">
-  <img src="./src/assets/ColorBerryScreen.png" alt="Png of the front page of the colerberry messages web app" width="720" height="auto" >
+  <img src="./src/assets/ColorBerryScreen.png" alt="Png of the front page of the colerberry messages web app" width="600" height="auto" >
 </p>
 
-# Getting Started with Create React App
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-## Available Scripts
-
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:2999](http://localhost:2999) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
 <!-- PROJECT SHIELDS -->
 <!--
@@ -42,19 +16,13 @@ See the section about [deployment](https://facebook.github.io/create-react-app/d
 [![Contributors][contributors-shield]](https://github.com/tessathornberry "Tessa Thornberry")
 [![LinkedIn][linkedin-shield]](https://www.linkedin.com/in/tessathornberry/ "Tessa Thornberry")
 
-
-
 <!-- PROJECT LOGO -->
 <br />
-<div align="center">
-  <a href="https://github.com/tessathornberry/Colorberry-Messages.git">
-    <img src="public/strawberryicon.png" alt="StrLogo" width="80" height="80">
-  </a>
+
 
 <h3 align="center">ColorBerry Messages</h3>
 
   <p align="center">
-    A simple messaging app where you can color in the messages
     <br />
     <a href="https://github.com/github_username/repo_name"><strong>Explore the docs »</strong></a>
     <br />
