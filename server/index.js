@@ -5,7 +5,7 @@ const cors = require('cors');
 const morgan = require('morgan');
 const router = require('./routes.js')
 
-const port = process.env.PORT || 3000;
+const port = 3000;
 const app = express();
 
 app.use(express.static(path.join(__dirname, 'build')));
