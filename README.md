@@ -2,7 +2,7 @@
 # ColorBerry Messages
 
 A simple messaging app where you can color in the messages
-<p align="left">
+<p align="center">
   <img src="./src/assets/ColorBerryScreen.png" alt="Png of the front page of the colerberry messages web app" width="600" height="auto" >
 </p>
 
