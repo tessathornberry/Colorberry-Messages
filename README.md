@@ -46,7 +46,12 @@ A simple messaging app where you can color in the messages
 
 <!-- ABOUT THE PROJECT -->
 ## About The Project
-This was a simple 3-day web app project; a starting point for future development. 
+This was a simple 3-day web app coloring-message project; a starting point for future development. 
+
+<p align="center">
+  <img src="./src/assets/ColorberryView.gif" alt="Png of the front page of the colerberry messages web app" width="600" height="auto" >
+</p>
+
 In this app, one can log in, create a short message, color two boxes and the text with the palette, and save the colored-in message to the database, afterwhich, it will appear on the user's list. 
 
 <p align="center">
@@ -67,9 +72,7 @@ When a user copies the code and visits the site, regardless of if they are a use
 <p align="center">
   <img src="./src/assets/Colorberryemailcode.gif" alt="Png of the front page of the colerberry messages web app" width="600" height="auto" >
 </p>
-<p align="center">
-  <img src="./src/assets/ColorberryView.gif" alt="Png of the front page of the colerberry messages web app" width="600" height="auto" >
-</p>
+
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
