@@ -68,7 +68,7 @@ If the user elects the second option, they are provided an e-mail prefilled with
 <p align="center">
   <img src="./src/assets/ColorBerryMessageEmail.png" alt="A pre-filled e-mail form with link and code" width="600" height="auto" >
 </p>
-When a user copies the code and visits the site, regardless of if they are a user or not, the code will provide them with the sender's colored-in message.
+When a recipient copies the code and visits the site, regardless of if they are a user or not, the code will provide them with the sender's colored-in message.
 <p align="center">
   <img src="./src/assets/ColorBerryCode.png" alt="entering the code in the web app" width="600" height="auto" >
 </p>
