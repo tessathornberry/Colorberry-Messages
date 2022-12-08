@@ -70,7 +70,7 @@ If the user elects the second option, they are provided an e-mail prefilled with
 </p>
 When a user copies the code and visits the site, regardless of if they are a user or not, the code will provide them with the sender's colored-in message.
 <p align="center">
-  <img src="./src/assets/ColorBerryCode.png" alt="Png of the front page of the colerberry messages web app" width="400" height="auto" >
+  <img src="./src/assets/ColorBerryCode.png" alt="Png of the front page of the colerberry messages web app" width="600" height="auto" >
 </p>
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -148,9 +148,8 @@ See the [open issues](https://github.com/github_username/repo_name/issues) for a
 
 <!-- CONTACT -->
 ## Contact
-- 📫 How to reach me **<a target="_blank" mailto="tessa.thornberry.engineer@gmail.com">tessa.thornberry.engineer@gmail.com</a>**
-<p align="left">
-<a href="https://linkedin.com/in/tessathornberry" target="_blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/linked-in-alt.svg" alt="tessathornberry at LinkedIn" height="30" width="40" /></a>
+- **<a target="_blank" mailto="tessa.thornberry.engineer@gmail.com">tessa.thornberry.engineer@gmail.com</a>**
+- <p align="left"> <a href="https://linkedin.com/in/tessathornberry" target="_blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/linked-in-alt.svg" alt="tessathornberry at LinkedIn" height="30" width="40" /> - Tessa Thornberry on LinkedIn</a>
 </p>
 
 Project Link: [https://github.com/tessathornberry/Colorberry-messages](https://github.com/tessathornberry/Colorberry-messages)
