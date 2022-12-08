@@ -70,7 +70,10 @@ If the user elects the second option, they are provided an e-mail prefilled with
 </p>
 When a user copies the code and visits the site, regardless of if they are a user or not, the code will provide them with the sender's colored-in message.
 <p align="center">
-  <img src="./src/assets/ColorBerryCode.png" alt="Png of the front page of the colerberry messages web app" width="600" height="auto" >
+  <img src="./src/assets/ColorBerryCode.png" alt="entering the code in the web app" width="600" height="auto" >
+</p>
+<p align="center">
+  <img src="./src/assets/ColorBerrySunset.png" alt="the received colored-in message" width="600" height="auto" >
 </p>
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
