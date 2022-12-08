@@ -46,7 +46,7 @@ A simple messaging app where you can color in the messages
 
 <!-- ABOUT THE PROJECT -->
 ## About The Project
-This was a simple 3-day web app coloring-message project; a starting point for future development. 
+This was a simple 3-day web app coloring-message project I created. 
 
 <p align="center">
   <img src="./src/assets/ColorBerryView.png" alt="A colored-in message that says 'I think you are AMAZING!'" width="600" height="auto" >
