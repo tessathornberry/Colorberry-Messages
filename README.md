@@ -49,31 +49,29 @@ A simple messaging app where you can color in the messages
 This was a simple 3-day web app coloring-message project; a starting point for future development. 
 
 <p align="center">
-  <img src="./src/assets/ColorberryView.gif" alt="Png of the front page of the colerberry messages web app" width="600" height="auto" >
+  <img src="./src/assets/ColorBerryView.png" alt="A colored-in message that says 'I think you are AMAZING!'" width="600" height="auto" >
 </p>
 
 In this app, one can log in, create a short message, color two boxes and the text with the palette, and save the colored-in message to the database, afterwhich, it will appear on the user's list. 
 
 <p align="center">
-  <img src="./src/assets/Colorberrycolor.gif" alt="Png of the front page of the colerberry messages web app" width="600" height="auto" >
+  <img src="./src/assets/Colorberrycolor.gif" alt="animation of user coloring in a message with the palette" width="600" height="auto" >
 </p>
 
 At the time a message is created, a form allows the user two options:
 1. to either copy and paste a unique code to send to a recipient in the messaging app of their choice, or 
-2. fill the recipient's email in to make it into a mailto hot-link, that, when clicked, opens the user's default e-mail service in a new tab.
+2. fill the recipient's e-mail in to make it into a mailto hotlink, that, when clicked, opens the user's default e-mail service in a new tab.
 <p align="center">
-  <img src="./src/assets/colorberryemailentry.gif" alt="Png of the front page of the colerberry messages web app" width="600" height="auto" >
+  <img src="./src/assets/colorberryemailentry.gif" alt="an image of the hotlink created by a user entering in the recipient's e-mail address" width="600" height="auto" >
 </p>
 If the user elects the second option, they are provided an e-mail prefilled with the recipient's address and the site link and code. 
 <p align="center">
-  <img src="./src/assets/colorberryemailsend.gif" alt="Png of the front page of the colerberry messages web app" width="600" height="auto" >
+  <img src="./src/assets/ColorBerryMessageEmail.png" alt="A pre-filled e-mail form with link and code" width="600" height="auto" >
 </p>
 When a user copies the code and visits the site, regardless of if they are a user or not, the code will provide them with the sender's colored-in message.
 <p align="center">
-  <img src="./src/assets/Colorberryemailcode.gif" alt="Png of the front page of the colerberry messages web app" width="600" height="auto" >
+  <img src="./src/assets/ColorBerryCode.png" alt="Png of the front page of the colerberry messages web app" width="400" height="auto" >
 </p>
-
-
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -136,7 +134,7 @@ To get a local copy of this simple web app, follow the steps below:
 <!-- USAGE EXAMPLES -->
 ## Usage
 
-This app is a starting point for creating your own message-coloring app. You might use svg files rather than divs, and you might use 
+This app is a starting point for creating your own message-coloring app. You might use svg files rather than divs, and you might use React Color for a swatch palette instead of a static palette. Firebase might also be added for secure and unique log-in capabilities.
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -150,10 +148,12 @@ See the [open issues](https://github.com/github_username/repo_name/issues) for a
 
 <!-- CONTACT -->
 ## Contact
+- 📫 How to reach me **<a target="_blank" mailto="tessa.thornberry.engineer@gmail.com">tessa.thornberry.engineer@gmail.com</a>**
+<p align="left">
+<a href="https://linkedin.com/in/tessathornberry" target="_blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/linked-in-alt.svg" alt="tessathornberry at LinkedIn" height="30" width="40" /></a>
+</p>
 
-Your Name - [@twitter_handle](https://twitter.com/twitter_handle) - email@email_client.com
-
-Project Link: [https://github.com/github_username/repo_name](https://github.com/github_username/repo_name)
+Project Link: [https://github.com/tessathornberry/Colorberry-messages](https://github.com/tessathornberry/Colorberry-messages)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
