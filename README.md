@@ -80,8 +80,15 @@ When a recipient copies the code and visits the site, regardless of if they are 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## Challenges
+There were several challenges I faced in the building of this app that I had to overcome in a short amount of time in order to be able to present this app as a complete Version 1:
 
+* I found that I really needed to standardize the appearance and relative sizing of the components of the messages, between the active message the user was coloring and the retrieved message they had colored and stored in the database. To accomplish this, I really fine-tuned the styled components I used in CSS.
+* It was challenging determining how the selected color would be transferred to the clickable divs, and what their "importance" would be so that the user would be coloring the div they wanted rather than the one behind it or in front of it. To overcome this I had to program the z-index of each div, informing its relevance to the cursor's action, and create a color tracking system in state that would save a color upon a user click on the palette, and then would update the div background color upon the user's click following the color selection. I also had to ensure the selections had properties in the database schema that were updated upon submitting the message.
+* I wanted to find a way to have the user be able to send the recipient a message without having the time to establish a full email module. In order to do this, I used the HTML mailto property and created a basic form encoded in the HTML that activated the user's default e-mail in the browser. 
+* I also wanted the recipient to be able to retrieve their message wihout having to log in. I tried making a unique ID for each message using a hashing function with the user's input data, and then realized I could use MongoDB's auto-generated unique ID. Then I created a form on the entry page of the app that allowed an ID entry without requiring a log in, and for the page-load to only contain the retrieved message.
+* At first, I could not figure out how to make the font color changable, because when one clicked on the actual words, the div behind it would update. To solve this issue, I programmed a separate tab the user could click to transfer the font color.
 
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 ### Built With
 
 * [![React][React.js]][React-url]
@@ -138,14 +145,15 @@ To get a local copy of this simple web app, follow the steps below:
 
 <!-- FUTURE WORK EXAMPLES -->
 ## Future Work
-While this app is a great starting point for what I had envisioned, there are many improvements of=r additions I would live to create for Version 2.
+While this app is a great starting point for what I had envisioned, there are many improvements or additions I would like to create for Version 2.
 
-* Using Firebase and e-mail verification to establish user accounts for secure storage of messages
-* Creating more complex SVG files for users to color
+* Using Firebase and e-mail verification to securely establish user accounts for storage of messages
+* Designing and coding far more complex SVG files for users to color that would size uniformly regardless of screen size.
 * Adding an animation to the opening of a message
-* Creating a more varied palette such as one through React Color for a wider range of options
+* Establishing a more varied palette such as one through React Color for a wider range of options, and a more intuitive font-coloring action
 * Creating a cleaner e-mailing/messaging system and recipient code entry system
-* Deploying the app for public use
+* Allowing the recipient to also color the message and save the result
+* Deploying the app in the cloud for public use
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
