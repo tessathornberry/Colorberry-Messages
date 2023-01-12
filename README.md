@@ -25,6 +25,7 @@ A simple messaging app where you can color in the messages
   <ol>
     <li>
       <a href="#about-the-project">About The Project</a>
+      <li><a href="#challenges">Challenges</a></li>
       <ul>
         <li><a href="#built-with">Built With</a></li>
       </ul>
@@ -36,7 +37,7 @@ A simple messaging app where you can color in the messages
         <li><a href="#installation">Installation</a></li>
       </ul>
     </li>
-    <li><a href="#usage">Usage</a></li>
+    <li><a href="#future-work">Future Work</a></li>
     <li><a href="#contact">Contact</a></li>
     <li><a href="#acknowledgments">Acknowledgments</a></li>
   </ol>
@@ -78,6 +79,7 @@ When a recipient copies the code and visits the site, regardless of if they are 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
+## Challenges
 
 
 ### Built With
@@ -134,8 +136,8 @@ To get a local copy of this simple web app, follow the steps below:
 
 
 
-<!-- USAGE EXAMPLES -->
-## Usage
+<!-- FUTURE WORK EXAMPLES -->
+## Future Work
 
 This app is a starting point for creating your own message-coloring app. You might use svg files rather than divs, and you might use React Color for a swatch palette instead of a static palette. Firebase might also be added for secure and unique log-in capabilities.
 
