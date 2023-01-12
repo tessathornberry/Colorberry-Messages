@@ -138,18 +138,16 @@ To get a local copy of this simple web app, follow the steps below:
 
 <!-- FUTURE WORK EXAMPLES -->
 ## Future Work
+While this app is a great starting point for what I had envisioned, there are many improvements of=r additions I would live to create for Version 2.
 
-This app is a starting point for creating your own message-coloring app. You might use svg files rather than divs, and you might use React Color for a swatch palette instead of a static palette. Firebase might also be added for secure and unique log-in capabilities.
-
+* Using Firebase and e-mail verification to establish user accounts for secure storage of messages
+* Creating more complex SVG files for users to color
+* Adding an animation to the opening of a message
+* Creating a more varied palette such as one through React Color for a wider range of options
+* Creating a cleaner e-mailing/messaging system and recipient code entry system
+* Deploying the app for public use
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
-
-See the [open issues](https://github.com/github_username/repo_name/issues) for a full list of proposed features (and known issues).
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
 
 <!-- CONTACT -->
 ## Contact
@@ -164,7 +162,7 @@ Project Link: [https://github.com/tessathornberry/Colorberry-messages](https://g
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <a href="https://github.com/SpiritedAway-BO/Capstagram">
+  <a href="https://github.com/tessathornberry/Colorberry-messages">
     <img src="public/strawberryicon.png" alt="Logo" width="80" height="80">
   </a>
   
