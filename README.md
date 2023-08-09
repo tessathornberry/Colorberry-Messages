@@ -74,7 +74,7 @@ When a recipient copies the code and visits the site, regardless of if they are 
   <img src="./src/assets/ColorBerryCode.png" alt="entering the code in the web app" width="600" height="auto" >
 </p>
 <p align="center">
-  <img src="./src/assets/ColorBerrySunset.png" alt="the received colored-in message" width="600" height="auto" >
+  <img src="https://github.com/tessathornberry/Colorberry-Messages/assets/105292208/500b8a51-ee44-4293-8496-3f4d895f7026" alt="the received colored-in message" width="600" height="auto" >
 </p>
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
